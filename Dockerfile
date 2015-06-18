@@ -35,8 +35,6 @@ RUN apt-get install -qy software-properties-common
 RUN apt-get install -qy python-software-properties
 RUN apt-get install -qy oracle-java7-installer
 
-
-
 ############# Dont forget to set the ENVIRONEMENT VARIABLE  
 ############  JAVA_HOME=/usr/lib/jvm/java-7-oracle
 
@@ -58,7 +56,6 @@ ADD razuna_tomcat_1_7/ /root/razuna/
 
 #Install GhostScript
 ADD gs /usr/bin/gs
-
 
 # Expose Ports
 EXPOSE 8080 443
