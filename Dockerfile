@@ -21,19 +21,22 @@ CMD ["/sbin/my_init"]
  usermod -d /home nobody && \
  chown -R nobody:users /home
 
-# Java Repository 
-RUN apt-add-repository ppa:webupd8team/java
 
 # FFMPEG Repository
 RUN add-apt-repository ppa:mc3man/trusty-media
-
 RUN apt-get update 
+RUN apt-get install -qy ffmpeg 
+
 RUN apt-get install -qy mc
 
 # Install Java
 RUN apt-get install -qy software-properties-common
 RUN apt-get install -qy python-software-properties
-RUN apt-get install -qy oracle-java7-installer
+
+RUN apt-get install python-software-properties
+RUN add-apt-repository ppa:webupd8team/java
+RUN apt-get update
+RUN apt-get install oracle-java7-installer
 
 ############# Dont forget to set the ENVIRONEMENT VARIABLE  
 ############  JAVA_HOME=/usr/lib/jvm/java-7-oracle
@@ -42,7 +45,7 @@ RUN apt-get install -qy libimage-exiftool-perl
 RUN apt-get install -qy dcraw ufraw 
 RUN apt-get install -qy gpac
 RUN apt-get install -qy imagemagick 
-RUN apt-get install -qy ffmpeg 
+
 
 # Stuff needed for ResourceSpace - Not sure needed here.
 #RUN apt-get install -qy poppler-utils 
