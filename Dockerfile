@@ -58,6 +58,8 @@ RUN apt-get install -qy imagemagick
 
 RUN mkdir /root/razuna
 ADD razuna_tomcat_1_7/ /root/razuna/
+RUN chmod -R 755 /root/razuna/
+
 
 #Install GhostScript
 ADD gs /usr/bin/gs
