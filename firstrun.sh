@@ -9,4 +9,4 @@ else
  fi
 
 cd /opt/razuna/tomcat/bin/
-#./startup.sh
+./startup.sh
