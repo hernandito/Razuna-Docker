@@ -36,7 +36,7 @@ RUN apt-get install -qy python-software-properties
 RUN apt-get install python-software-properties
 RUN add-apt-repository ppa:webupd8team/java
 RUN apt-get update
-RUN apt-get install oracle-java7-installer
+#RUN apt-get install oracle-java7-installer
 
 ############# Dont forget to set the ENVIRONEMENT VARIABLE  
 ############  JAVA_HOME=/usr/lib/jvm/java-7-oracle
