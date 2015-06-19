@@ -23,7 +23,8 @@ CMD ["/sbin/my_init"]
 
 
 # FFMPEG Repository
-RUN add-apt-repository ppa:mc3man/trusty-media
+RUN add-apt-repository ppa:mc3man/trusty-media 
+RUN apt-get remove ffmpeg
 RUN apt-get update 
 RUN apt-get install -qy ffmpeg 
 

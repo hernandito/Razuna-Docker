@@ -12,4 +12,4 @@ else
  
 chmod -R 777 /opt/razuna/tomcat/bin/
 cd /opt/razuna/tomcat/bin/
-./startup.sh
+#./startup.sh
