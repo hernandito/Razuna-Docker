@@ -25,16 +25,18 @@ CMD ["/sbin/my_init"]
 # FFMPEG Repository
 #RUN add-apt-repository ppa:mc3man/trusty-media -y
 #RUN apt-get remove ffmpeg
-#RUN apt-get update 
+
 #RUN apt-get install -qy ffmpeg 
+
+RUN apt-get update 
 
 RUN apt-get install -qy mc
 
 # Install Java
 RUN sed 's/main$/main universe/' -i /etc/apt/sources.list
 RUN apt-get update && apt-get install -y software-properties-common python-software-properties
-RUN add-apt-repository ppa:webupd8team/java -y
 
+RUN add-apt-repository ppa:webupd8team/java -y
 RUN apt-get update
 RUN echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
 RUN apt-get install -y oracle-java7-installer
